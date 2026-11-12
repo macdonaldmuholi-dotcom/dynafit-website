@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://macdonaldmuholi-dotcom.github.io/dynafit-website/sitemap.xml
