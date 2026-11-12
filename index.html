@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DynaFit | Move. Perform. Thrive.</title>
+  <meta name="description" content="DynaFit — personalised fitness, corporate wellness and community experiences led by founder and CEO Duncan M. Amulioto." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Manrope:wght@400;500;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-900:#041c18;
+      --bg-800:#051f1b;
+      --bg-700:#072922;
+      --green:#b9ef39;
+      --green-2:#d6ff71;
+      --green-deep:#7ebf1c;
+      --ink:#081e1a;
+      --paper:#f6f8f3;
+      --white:#ffffff;
+      --text:#dfeae5;
+      --muted:#aab9b3;
+      --line:#dfe7df;
+      --card:#f0f4ee;
+      --shadow:0 18px 50px rgba(7,28,22,0.15);
+      --radius:18px;
+      --container:1240px;
+      --alt-accent:#f2653b;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth; scroll-padding-top:90px}
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:"DM Sans",sans-serif;
+      line-height:1.5;
+    }
+    img{max-width:100%; display:block}
+    a{text-decoration:none; color:inherit}
+    button,input,select,textarea{font:inherit}
+    h1,h2,h3,h4{margin:0; font-family:"Manrope",sans-serif; letter-spacing:-0.06em; line-height:1.02}
+    p{margin:0}
+    .container{
+      width:min(var(--container), calc(100% - 64px));
+      margin:0 auto;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      text-transform:uppercase;
+      letter-spacing:0.17em;
+      font-size:.72rem;
+      font-weight:800;
+      color:var(--green);
+    }
+    .eyebrow::before{
+      content:"";
+      width:22px;
+      height:2px;
+      background:var(--green);
+      border-radius:99px;
+      display:inline-block;
+    }
+    .section{padding:92px 0}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:16px 26px;
+      border-radius:999px;
+      border:0;
+      background:var(--green);
+      color:#0b241d;
+      font-weight:800;
+      font-size:1.02rem;
+      box-shadow:0 10px 28px rgba(185,239,57,0.28);
+      cursor:pointer;
+      transition:transform .2s ease, filter .2s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-2px); filter:brightness(1.04)}
+    .btn.secondary{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.34);
+      color:#fff;
+      box-shadow:none;
+    }
+    .btn .arrow{font-size:1.4rem; line-height:1}
+    .text-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#4e871b;
+      font-weight:800;
+      font-size:0.82rem;
+      transition:gap .2s ease;
+    }
+    .text-link:hover{gap:12px}
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(4, 24, 20, 0.72);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,0.09);
+    }
+    .nav{
+      height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:210px;
+    }
+    .brand-mark{
+      position:relative;
+      width:26px;
+      height:26px;
+      display:inline-block;
+      transform:rotate(0deg);
+    }
+    .brand-mark:before,
+    .brand-mark:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:50%;
+      border:3px solid var(--green);
+      border-left-color:transparent;
+      transform:rotate(35deg);
+    }
+    .brand-mark:after{
+      transform:rotate(-35deg) scale(.78);
+      border-left-color:transparent;
+      border-right-color:transparent;
+    }
+    .brand-name{
+      font-family:"Manrope",sans-serif;
+      font-size:2.2rem;
+      line-height:0.85;
+      letter-spacing:-0.09em;
+      font-weight:800;
+      color:#fff;
+    }
+    .brand-name em{
+      font-style:normal;
+      color:var(--green);
+    }
+    .brand-sub{
+      display:block;
+      font-size:0.53rem;
+      letter-spacing:0.2em;
+      text-transform:uppercase;
+      color:#dfeae5;
+      margin-top:2px;
+      font-weight:700;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:28px;
+      flex:1;
+      font-size:0.95rem;
+      color:#edf7f0;
+      font-weight:600;
+    }
+    .nav-links a{
+      opacity:.9;
+      transition:color .2s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active{
+      color:var(--green);
+    }
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+    .icon-btn{
+      width:38px;
+      height:38px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(255,255,255,0.14);
+      background:transparent;
+      color:#fff;
+      cursor:pointer;
+    }
+    .icon-btn svg{width:18px;height:18px}
+    .hero{
+      position:relative;
+      min-height:calc(100vh - 78px);
+      color:#fff;
+      background:
+        linear-gradient(90deg, rgba(4,20,17,0.86) 0%, rgba(4,20,17,0.78) 30%, rgba(4,20,17,0.4) 58%, rgba(4,20,17,0.2) 100%),
+        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.38)),
+        url("https://images.unsplash.com/photo-1599058917212-d750089bc07c?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+      overflow:hidden;
+    }
+    .hero-inner{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      align-items:center;
+      min-height:calc(100vh - 78px);
+      gap:24px;
+      padding:55px 0 80px;
+    }
+    .hero-copy{
+      max-width:720px;
+      padding-top:18px;
+    }
+    .hero-copy .eyebrow{
+      margin-bottom:18px;
+    }
+    .hero h1{
+      font-size:clamp(4rem, 6vw, 7rem);
+      line-height:0.9;
+      letter-spacing:-0.07em;
+      font-weight:800;
+      color:#fff;
+    }
+    .hero h1 .accent{
+      display:block;
+      color:var(--green);
+    }
+    .hero-text{
+      max-width:665px;
+      margin-top:24px;
+      font-size:1.15rem;
+      color:rgba(255,255,255,0.8);
+      line-height:1.5;
+    }
+    .hero-actions{
+      display:flex;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:18px;
+      margin-top:34px;
+    }
+    .play{
+      display:inline-flex;
+      align-items:center;
+      gap:14px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.24);
+      border-radius:999px;
+      padding:12px 22px 12px 14px;
+      font-weight:800;
+      color:#fff;
+      backdrop-filter:blur(6px);
+    }
+    .play .dot{
+      display:grid;
+      place-items:center;
+      width:28px;height:28px;border-radius:50%;
+      background:var(--green);
+      color:#0b241d;
+      font-size:.8rem;
+      font-weight:900;
+      box-shadow:0 0 0 5px rgba(185,239,57,0.14);
+    }
+    .hero-stats{
+      display:flex;
+      align-items:end;
+      gap:62px;
+      margin-top:44px;
+      flex-wrap:wrap;
+    }
+    .stat strong{
+      display:block;
+      font-family:"Manrope",sans-serif;
+      font-size:clamp(2.2rem, 2.4vw, 3rem);
+      letter-spacing:-0.06em;
+      font-weight:800;
+      line-height:1;
+    }
+    .stat span{
+      display:block;
+      margin-top:8px;
+      font-size:.72rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,0.76);
+      font-weight:700;
+    }
+    .hero-visual{
+      position:relative;
+      min-height:540px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:flex-end;
+    }
+    .chat-pill{
+      position:absolute;
+      right:28px;
+      bottom:20px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:linear-gradient(180deg,#9af1b6,#7fe7ad);
+      color:#06241d;
+      padding:12px 18px 12px 14px;
+      border-radius:999px;
+      font-weight:800;
+      box-shadow:0 18px 32px rgba(82,214,133,0.2);
+    }
+    .chat-pill .bubble{
+      width:22px;height:22px;border-radius:50%;
+      background:#fff;
+      display:grid; place-items:center; font-size:.72rem; font-weight:900;
+    }
+
+    .service-strip{
+      background:#fff;
+      border-bottom:1px solid var(--line);
+    }
+    .services{
+      display:grid;
+      grid-template-columns:repeat(5, 1fr);
+      gap:8px;
+    }
+    .service{
+      padding:12px 18px 8px 0;
+      border-right:1px solid var(--line);
+    }
+    .service:last-child{border-right:0; padding-right:0}
+    .service-icon{
+      width:42px;height:42px;border-radius:12px;
+      background:#edf6ea;color:#557f1e;
+      display:grid;place-items:center;
+      margin-bottom:16px;
+    }
+    .service-icon svg{width:24px;height:24px}
+    .service h3{
+      font-size:1.02rem;
+      letter-spacing:-.03em;
+      margin-bottom:8px;
+    }
+    .service p{
+      font-size:.84rem;
+      color:#5e6f68;
+      min-height:50px;
+      margin-bottom:12px;
+    }
+
+    .programs-layout{
+      display:grid;
+      grid-template-columns:.82fr 1.7fr;
+      gap:48px;
+      align-items:start;
+    }
+    .program-intro h2{
+      font-size:clamp(2.4rem, 4vw, 3.5rem);
+      margin-top:16px;
+      margin-bottom:14px;
+      color:var(--ink);
+    }
+    .program-intro h2 span{color:#4e871b}
+    .program-intro p{
+      color:#5b6d67;
+      max-width:330px;
+      line-height:1.6;
+    }
+    .program-intro .btn{
+      margin-top:18px;
+    }
+    .filters{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:18px;
+    }
+    .filter{
+      border:1px solid var(--line);
+      background:transparent;
+      color:#53665d;
+      border-radius:999px;
+      padding:9px 14px;
+      font-size:.8rem;
+      font-weight:700;
+      cursor:pointer;
+      transition:all .2s ease;
+    }
+    .filter.active,
+    .filter:hover{
+      background:var(--ink);
+      color:#fff;
+      border-color:var(--ink);
+    }
+    .program-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:16px;
+    }
+    .program-card{
+      position:relative;
+      display:block;
+      min-height:250px;
+      border-radius:16px;
+      overflow:hidden;
+      background:#122a24;
+      color:#fff;
+      isolation:isolate;
+      transition:transform .25s ease;
+    }
+    .program-card:hover{transform:translateY(-4px)}
+    .program-card[hidden]{display:none}
+    .program-card img{
+      position:absolute; inset:0;
+      width:100%; height:100%; object-fit:cover;
+      z-index:-2;
+    }
+    .program-card::after{
+      content:"";
+      position:absolute; inset:0;
+      background:linear-gradient(0deg, rgba(3,23,19,0.92) 0%, rgba(3,23,19,0.56) 40%, rgba(3,23,19,0.2) 100%);
+      z-index:-1;
+    }
+    .program-card .content{
+      position:absolute; left:0; right:0; bottom:0;
+      padding:20px 20px 18px;
+    }
+    .tag{
+      display:inline-flex;
+      background:var(--green);
+      color:#18300e;
+      font-weight:800;
+      font-size:.68rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      border-radius:999px;
+      padding:6px 9px;
+      margin-bottom:12px;
+    }
+    .program-card h3{
+      font-size:1.4rem;
+      margin-bottom:6px;
+    }
+    .program-card p{
+      color:rgba(255,255,255,0.74);
+      font-size:.82rem;
+      max-width:250px;
+    }
+    .card-arrow{
+      position:absolute;
+      right:18px; bottom:18px;
+      width:34px;height:34px;border-radius:50%;
+      display:grid;place-items:center;
+      background:var(--green);
+      color:#0b241d;
+      font-weight:900;
+      font-size:1.15rem;
+    }
+
+    .about{
+      background:#041b17;
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+    .about-grid{
+      display:grid;
+      grid-template-columns:.88fr 1.12fr;
+      gap:60px;
+      align-items:center;
+    }
+    .about-copy h2{
+      font-size:clamp(2.3rem, 4vw, 3.7rem);
+      margin:16px 0 18px;
+    }
+    .about-copy h2 span{color:var(--green)}
+    .about-copy > p{
+      max-width:470px;
+      color:#c7d5cf;
+      line-height:1.65;
+    }
+    .benefits{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px 18px;
+      margin:26px 0 28px;
+    }
+    .benefit{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:.9rem;
+      font-weight:700;
+      color:#fff;
+    }
+    .benefit svg{
+      width:24px;height:24px; color:var(--green); flex-shrink:0;
+    }
+    .about-visual{
+      position:relative;
+      min-height:470px;
+    }
+    .about-visual img{
+      position:absolute; inset:0;
+      width:100%; height:100%; object-fit:cover; border-radius:18px;
+    }
+    .quote-stamp{
+      position:absolute;
+      right:-18px; bottom:26px;
+      max-width:220px;
+      background:var(--green);
+      color:#0a241d;
+      padding:22px 24px;
+      border-radius:14px;
+      transform:rotate(-4deg);
+      font-family:"Manrope",sans-serif;
+      font-size:1.18rem;
+      font-weight:800;
+      box-shadow:0 18px 40px rgba(185,239,57,0.2);
+    }
+    .quote-stamp small{
+      display:block;
+      margin-top:8px;
+      font-size:.7rem;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+
+    .stats-panel{
+      background:#edf6ea;
+      padding:30px 0;
+    }
+    .stat-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:0;
+    }
+    .stat-box{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:16px;
+      border-right:1px solid #c7d9c1;
+      padding:8px 12px;
+      min-height:82px;
+    }
+    .stat-box:last-child{border-right:0}
+    .stat-box svg{
+      width:36px;height:36px;color:#3c6d2d; flex-shrink:0;
+    }
+    .stat-box strong{
+      display:block;
+      font-family:"Manrope",sans-serif;
+      font-size:1.7rem;
+      line-height:1.1;
+      letter-spacing:-0.06em;
+      font-weight:800;
+      color:#081e1a;
+    }
+    .stat-box span{
+      display:block;
+      margin-top:4px;
+      color:#5f7165;
+      font-size:.76rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+
+    .split-feature{
+      background:#fff;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      min-height:340px;
+    }
+    .testimonial{
+      padding:54px clamp(20px, 4vw, 60px);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .quote-mark{
+      font-family:"Manrope",sans-serif;
+      font-size:4.4rem;
+      line-height:.8;
+      color:#80b62d;
+      font-weight:800;
+    }
+    blockquote{
+      margin:12px 0 14px;
+      font-family:"Manrope",sans-serif;
+      font-size:1.12rem;
+      line-height:1.5;
+      color:#0a241d;
+      max-width:500px;
+    }
+    .person{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-top:10px;
+    }
+    .person img{
+      width:48px;height:48px;border-radius:50%; object-fit:cover;
+    }
+    .person strong{
+      display:block;
+      font-size:0.85rem;
+      color:#1d2c2a;
+    }
+    .person span{
+      font-size:.75rem;
+      color:#596d66;
+    }
+    .slider-controls{
+      display:flex; gap:8px;
+      margin-top:18px;
+    }
+    .slider-controls button{
+      width:38px;height:38px;border-radius:50%;
+      border:1px solid var(--line); background:#fff; cursor:pointer;
+      color:#0b241d; font-weight:700;
+    }
+    .slider-controls button:hover{
+      background:var(--green);
+      border-color:var(--green);
+    }
+    .cta-panel{
+      position:relative;
+      background:#071b17;
+      color:#fff;
+      padding:52px clamp(22px, 4vw, 80px);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      overflow:hidden;
+    }
+    .cta-panel::after{
+      content:"";
+      position:absolute; right:-80px; bottom:-180px;
+      width:340px; height:340px;
+      border:55px solid rgba(185,239,57,0.12);
+      border-radius:50%;
+    }
+    .cta-panel > *{position:relative; z-index:1}
+    .cta-panel h2{
+      max-width:540px;
+      margin:14px 0 10px;
+      font-size:clamp(2rem, 3vw, 3rem);
+    }
+    .cta-panel p{
+      max-width:420px;
+      color:#cbd9d4;
+      line-height:1.6;
+      margin-bottom:16px;
+    }
+
+    .events{background:#fff}
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:22px;
+      margin-bottom:32px;
+    }
+    .section-head h2{
+      margin-top:12px;
+      font-size:clamp(2.1rem, 4vw, 3rem);
+      color:#091d1a;
+    }
+    .section-head p{
+      max-width:420px;
+      color:#586b66;
+      font-size:1rem;
+      line-height:1.6;
+      margin-bottom:4px;
+    }
+    .event-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:18px;
+    }
+    .event-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      overflow:hidden;
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .event-card:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow);
+    }
+    .event-card img{
+      width:100%; height:190px; object-fit:cover; display:block;
+    }
+    .event-body{
+      padding:20px;
+    }
+    .event-meta{
+      display:flex; flex-wrap:wrap; gap:10px;
+      font-size:.72rem;
+      color:#5b8d2b;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .event-body h3{
+      font-size:1.3rem;
+      margin-bottom:8px;
+    }
+    .event-body p{
+      color:#5f7069;
+      font-size:.86rem;
+      line-height:1.7;
+      margin-bottom:10px;
+    }
+
+    .wellness{
+      background:#eaf2e4;
+    }
+    .wellness-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:56px;
+      align-items:center;
+    }
+    .wellness-image{
+      position:relative;
+      min-height:420px;
+    }
+    .wellness-image img{
+      position:absolute; inset:0;
+      width:100%; height:100%; object-fit:cover; border-radius:18px;
+    }
+    .floating-note{
+      position:absolute;
+      left:-18px; bottom:24px;
+      background:#fff;
+      color:#0a241d;
+      border-radius:14px;
+      padding:18px 18px 16px;
+      box-shadow:var(--shadow);
+      max-width:235px;
+      font-weight:800;
+      line-height:1.3;
+    }
+    .floating-note span{
+      display:block; margin-top:6px;
+      color:#5c6f68;
+      font-size:.75rem;
+      font-weight:500;
+    }
+    .wellness-copy h2{
+      font-size:clamp(2.2rem, 4vw, 3.2rem);
+      margin:16px 0 14px;
+    }
+    .wellness-copy > p{
+      color:#586d67;
+      line-height:1.7;
+    }
+    .check-list{
+      list-style:none;
+      padding:0; margin:24px 0 28px;
+      display:grid; gap:12px;
+    }
+    .check-list li{
+      display:flex; align-items:flex-start; gap:10px;
+      color:#17312b;
+      font-size:.92rem;
+      font-weight:600;
+    }
+    .check-list svg{
+      width:20px;height:20px;color:#567d22; flex-shrink:0; margin-top:1px;
+    }
+
+    .faq-list{
+      max-width:900px;
+      margin:0 auto;
+      border-top:1px solid var(--line);
+    }
+    .faq-item{
+      border-bottom:1px solid var(--line);
+    }
+    .faq-question{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      background:transparent;
+      border:0;
+      padding:22px 0;
+      text-align:left;
+      color:#0a241d;
+      font-family:"Manrope",sans-serif;
+      font-size:1.04rem;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .faq-question span:last-child{
+      font-size:1.5rem;
+      color:#5d8b27;
+    }
+    .faq-answer{
+      display:none;
+      max-width:720px;
+      color:#586d67;
+      padding:0 0 22px;
+      line-height:1.7;
+    }
+    .faq-item.open .faq-answer{display:block}
+
+    .contact-section{
+      background:#041b17;
+      color:#fff;
+    }
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.82fr 1.18fr;
+      gap:52px;
+      align-items:start;
+    }
+    .contact-copy h2{
+      font-size:clamp(2.3rem, 4vw, 3.5rem);
+      margin:16px 0 14px;
+    }
+    .contact-copy p{
+      color:#c9d8d2;
+      max-width:420px;
+      line-height:1.7;
+    }
+    .contact-detail{
+      display:flex; align-items:center; gap:12px;
+      margin-top:18px;
+      color:#edf6f2;
+      font-size:1rem;
+    }
+    .contact-detail svg{
+      width:22px; height:22px; color:var(--green); flex-shrink:0;
+    }
+    .contact-detail a{color:inherit}
+    .contact-detail a:hover{color:var(--green)}
+    .whatsapp-label{
+      color:var(--green);
+      font-weight:700;
+      font-size:.75rem;
+    }
+
+    .contact-form{
+      background:#fff;
+      color:#081e1a;
+      border-radius:18px;
+      padding:28px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      box-shadow:0 18px 40px rgba(9,29,24,0.15);
+    }
+    .field{
+      display:grid;
+      gap:8px;
+    }
+    .field.full{grid-column:1 / -1}
+    .field label{
+      font-size:.78rem;
+      font-weight:800;
+      color:#1c2f2a;
+    }
+    .field input,
+    .field select,
+    .field textarea{
+      width:100%;
+      border:1px solid #d7e0db;
+      background:#fbfcfa;
+      border-radius:9px;
+      padding:12px 13px;
+      outline:none;
+      color:#17312b;
+    }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus{
+      border-color:#7cb129;
+      box-shadow:0 0 0 3px rgba(185,239,57,0.18);
+    }
+    .field textarea{
+      min-height:106px;
+      resize:vertical;
+    }
+    .form-note{
+      grid-column:1 / -1;
+      color:#5b7168;
+      font-size:.78rem;
+      line-height:1.55;
+    }
+    .form-success{
+      display:none;
+      grid-column:1 / -1;
+      background:#edf8e9;
+      color:#2f6e21;
+      border-radius:10px;
+      padding:12px 14px;
+      font-weight:700;
+    }
+    .contact-form .btn{justify-self:start}
+
+    .footer{
+      background:#02120f;
+      color:#fff;
+      padding:44px 0 18px;
+    }
+    .footer-top{
+      display:grid;
+      grid-template-columns:1.2fr .8fr 1fr 1.25fr;
+      gap:34px;
+      padding-bottom:30px;
+    }
+    .footer .brand{
+      margin-bottom:18px;
+    }
+    .footer .brand-name{
+      font-size:1.8rem;
+    }
+    .footer p, .footer a, .footer li{
+      color:#b9cbc5;
+      font-size:.82rem;
+      line-height:1.7;
+    }
+    .footer h4{
+      margin:0 0 16px;
+      font-size:.92rem;
+      letter-spacing:-0.04em;
+      color:#fff;
+    }
+    .footer-links{
+      list-style:none;
+      padding:0; margin:0;
+      display:grid; gap:8px;
+    }
+    .footer-newsletter{
+      display:flex;
+      align-items:center;
+      width:100%;
+      margin-top:14px;
+      border:1px solid #526d63;
+      border-radius:999px;
+      overflow:hidden;
+      background:rgba(255,255,255,0.02);
+    }
+    .footer-newsletter input{
+      flex:1; min-width:0;
+      border:0; background:transparent;
+      color:#fff; padding:12px 14px; outline:none;
+    }
+    .footer-newsletter button{
+      border:0; background:var(--green); color:#0b241d;
+      width:42px;height:42px; margin:4px;
+      border-radius:50%; font-weight:900; cursor:pointer;
+    }
+    .socials{
+      display:flex; gap:10px; margin-top:18px;
+    }
+    .socials a{
+      width:34px;height:34px;
+      border:1px solid #53675d; border-radius:50%;
+      display:grid; place-items:center;
+      color:#fff; font-weight:800; font-size:.72rem;
+    }
+    .socials a:hover{background:var(--green); color:#051d17; border-color:var(--green)}
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,0.12);
+      padding-top:18px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      color:#a8b9b1;
+      font-size:.76rem;
+    }
+    .footer-bottom span:last-child{color:var(--green)}
+
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:18px;
+      transform:translate(-50%, 14px);
+      background:#081f1c;
+      color:#fff;
+      padding:12px 18px;
+      border-radius:999px;
+      box-shadow:0 10px 30px rgba(0,0,0,.2);
+      opacity:0;
+      pointer-events:none;
+      transition:all .25s ease;
+      z-index:80;
+      font-size:.9rem;
+    }
+    .toast.show{
+      opacity:1; transform:translate(-50%,0);
+    }
+
+    .utility-bar {
+      height: 20px;
+      background: #222820;
+      color: #f5f3e9;
+      font-size: 0.53rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .utility-inner {
+      width: min(1668px, calc(100% - 64px));
+      height: 100%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr 1fr;
+      align-items: center;
+    }
+
+    .utility-inner span:nth-child(2) {
+      text-align: center;
+      text-transform: none;
+      letter-spacing: 0.08em;
+    }
+
+    .utility-inner a {
+      justify-self: end;
+    }
+
+    .utility-inner a span {
+      color: var(--alt-accent);
+    }
+
+    .site-header {
+      position: relative;
+      background: #f7f6f0;
+      color: #111a16;
+      border-bottom: 0;
+      backdrop-filter: none;
+    }
+
+    .site-header .container {
+      width: min(1668px, calc(100% - 64px));
+    }
+
+    .nav {
+      height: 70px;
+    }
+
+    .alt-brand {
+      min-width: 220px;
+      gap: 9px;
+    }
+
+    .alt-brand-mark {
+      color: var(--alt-accent);
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+      font-size: 1.55rem;
+      letter-spacing: -0.15em;
+      transform: skew(-12deg);
+    }
+
+    .alt-brand-type {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .alt-brand .brand-name {
+      color: #15201b;
+      font-family: "DM Sans", sans-serif;
+      font-size: 1.45rem;
+      letter-spacing: -0.06em;
+      line-height: 1;
+    }
+
+    .alt-brand .brand-name span {
+      color: var(--alt-accent);
+    }
+
+    .alt-brand .brand-sub {
+      color: #48534c;
+      font-size: 0.4rem;
+      letter-spacing: 0.15em;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      justify-content: flex-end;
+      gap: clamp(20px, 2vw, 36px);
+      color: #17211c;
+      font-size: 0.72rem;
+    }
+
+    .nav-links a,
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #17211c;
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: center;
+      min-width: 105px;
+      padding: 13px 15px;
+      background: var(--alt-accent);
+      color: #111a16;
+      font-size: 0.72rem;
+      font-weight: 800;
+    }
+
+    .header-cta:hover,
+    .alt-button:hover {
+      background: #ff8059;
+    }
+
+    .alt-hero {
+      min-height: min(660px, calc(100svh - 160px));
+      height: min(660px, calc(100svh - 160px));
+      color: #f8f6ec;
+      background:
+        linear-gradient(90deg, rgba(7, 19, 14, 0.95) 0%, rgba(7, 19, 14, 0.86) 26%, rgba(7, 19, 14, 0.48) 48%, rgba(7, 19, 14, 0.05) 76%),
+        linear-gradient(0deg, rgba(7, 19, 14, 0.52), transparent 34%),
+        url("https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=2200&q=88") center 48% / cover no-repeat;
+      overflow: hidden;
+    }
+
+    .alt-hero-content {
+      position: absolute;
+      top: 50%;
+      left: max(6.1vw, calc((100vw - 1668px) / 2));
+      width: min(500px, 42vw);
+      transform: translateY(-53%);
+      z-index: 1;
+    }
+
+    .alt-eyebrow {
+      margin-bottom: 26px;
+      color: #fff;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .alt-eyebrow::before {
+      content: "■";
+      color: var(--alt-accent);
+      margin-right: 10px;
+      font-size: 0.55rem;
+    }
+
+    .alt-hero h1 {
+      color: #f8f6ec;
+      font-family: "Oswald", sans-serif;
+      font-size: clamp(4.4rem, 5.2vw, 6.4rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 0.92;
+    }
+
+    .alt-hero h1 span {
+      color: var(--alt-accent);
+    }
+
+    .alt-hero-copy {
+      margin-top: 20px;
+      color: #f0eee4;
+      font-size: 0.78rem;
+      line-height: 1.8;
+    }
+
+    .alt-hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-top: 22px;
+    }
+
+    .alt-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-width: 132px;
+      padding: 15px 18px;
+      background: var(--alt-accent);
+      color: #101914;
+      font-size: 0.68rem;
+      font-weight: 800;
+      transition: background 0.2s ease;
+    }
+
+    .alt-button span {
+      font-size: 1rem;
+    }
+
+    .alt-text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+    }
+
+    .hero-side-note {
+      position: absolute;
+      top: 43%;
+      right: 16px;
+      writing-mode: vertical-rl;
+      color: #f5f3e8;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+    }
+
+    .hero-bottom-line {
+      position: absolute;
+      left: max(6.1vw, calc((100vw - 1668px) / 2));
+      right: max(6.1vw, calc((100vw - 1668px) / 2));
+      bottom: 0;
+      min-height: 41px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255,255,255,0.28);
+      color: #f5f3e8;
+      font-size: 0.53rem;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+    }
+
+    .hero-bottom-line a span {
+      margin-left: 10px;
+      color: var(--alt-accent);
+    }
+
+    .values-strip {
+      background: #e8ecdc;
+      color: #16211b;
+    }
+
+    .values-inner {
+      width: min(1668px, calc(100% - 64px));
+      min-height: 44px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.55rem;
+      font-weight: 800;
+    }
+
+    .values-inner i {
+      color: var(--alt-accent);
+      font-size: 0.47rem;
+      font-style: normal;
+    }
+
+    .btn:not(.secondary) {
+      background: var(--alt-accent);
+      box-shadow: none;
+    }
+
+    .btn:not(.secondary):hover {
+      background: #ff8059;
+    }
+
+    @media (min-width: 761px) {
+      .site-header .container {
+        width: min(1570px, calc(100% - 88px));
+      }
+
+      .nav {
+        height: 76px;
+        gap: 24px;
+      }
+
+      .nav-links {
+        gap: clamp(18px, 1.65vw, 29px);
+        font-size: 0.9rem;
+      }
+
+      .nav-actions {
+        gap: 14px;
+      }
+
+      .nav-actions .btn {
+        padding: 14px 22px;
+        font-size: 0.95rem;
+      }
+
+      .chat-pill {
+        position: fixed;
+        right: 26px;
+        bottom: 24px;
+        z-index: 60;
+        padding: 14px 19px;
+      }
+    }
+
+    @media (max-width: 1100px){
+      .nav-links{gap:18px; font-size:.82rem}
+      .hero-inner{grid-template-columns:1fr}
+      .programs-layout{grid-template-columns:1fr}
+      .about-grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .event-grid{grid-template-columns:repeat(2, 1fr)}
+      .footer-top{grid-template-columns:1fr 1fr}
+    }
+
+    @media (max-width: 760px){
+      .utility-inner {
+        width: calc(100% - 28px);
+        grid-template-columns: 1fr auto;
+      }
+
+      .utility-inner span:nth-child(2) {
+        display: none;
+      }
+
+      .site-header .container {
+        width: calc(100% - 28px);
+      }
+
+      .nav {
+        height: 66px;
+      }
+
+      .alt-brand {
+        min-width: 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .header-cta {
+        min-width: 94px;
+        padding: 12px;
+      }
+
+      .alt-hero {
+        height: auto;
+        min-height: 620px;
+        background-position: 63% center;
+      }
+
+      .alt-hero-content {
+        top: 0;
+        left: 24px;
+        width: min(440px, calc(100% - 48px));
+        transform: none;
+        padding-top: 76px;
+      }
+
+      .alt-hero h1 {
+        font-size: clamp(4.2rem, 17vw, 6rem);
+      }
+
+      .alt-hero-copy {
+        max-width: 320px;
+      }
+
+      .hero-side-note {
+        display: none;
+      }
+
+      .hero-bottom-line {
+        left: 24px;
+        right: 24px;
+        font-size: 0.45rem;
+      }
+
+      .values-inner {
+        width: calc(100% - 28px);
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 14px;
+        padding: 12px 0;
+        font-size: 0.49rem;
+      }
+
+      .hero {
+        background-position: 58% center;
+      }
+
+      .hero-inner {
+        display: block;
+        min-height: 0;
+        padding:46px 0 88px;
+      }
+      .hero h1{font-size:clamp(3rem, 15vw, 4.8rem)}
+      .hero-actions{flex-direction:column; align-items:flex-start}
+      .hero-actions .btn,
+      .hero-actions .play{width:100%; justify-content:center}
+      .hero-stats{
+        gap:24px 48px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        padding-top: 20px;
+      }
+      .services{grid-template-columns:1fr 1fr; gap:10px 18px}
+      .service{border-right:0; padding-right:0}
+      .program-grid{grid-template-columns:1fr 1fr}
+      .split-feature{grid-template-columns:1fr}
+      .event-grid{grid-template-columns:1fr}
+      .wellness-grid{grid-template-columns:1fr}
+      .contact-form{grid-template-columns:1fr}
+      .field.full,
+      .form-note,
+      .form-success{
+        grid-column:1
+      }
+      .footer-top{grid-template-columns:1fr}
+      .footer-bottom{flex-direction:column; gap:8px}
+      .section-head{flex-direction:column; align-items:flex-start}
+      .chat-pill{right:20px; bottom:16px}
+      .stat-grid{grid-template-columns:1fr 1fr}
+    }
+
+    @media (max-width: 420px) {
+      .alt-hero-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .hero-bottom-line span {
+        max-width: 48%;
+      }
+
+      .values-inner i:nth-of-type(2) {
+        display: none;
+      }
+
+      .program-grid{grid-template-columns:1fr}
+      .services{grid-template-columns:1fr}
+      .stat-grid{grid-template-columns:1fr}
+      .brand-sub{display:none}
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="utility-bar">
+    <div class="utility-inner">
+      <span>NAIROBI, KENYA</span>
+      <span>Movement for every body. Possibility for every day.</span>
+      <a href="#contact">LET'S GET MOVING <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand alt-brand" href="#home" aria-label="DynaFit home">
+        <span class="alt-brand-mark" aria-hidden="true">//</span>
+        <span class="alt-brand-type">
+          <span class="brand-name">DYNA<span>FIT</span></span>
+          <span class="brand-sub">MOVE. PERFORM. THRIVE.</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">Our approach</a>
+        <a href="#programs">Services</a>
+        <a href="#corporate">For organisations</a>
+        <a href="#events">Experiences</a>
+      </nav>
+
+      <a class="header-cta" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero alt-hero" id="home">
+      <div class="alt-hero-content">
+        <div class="alt-eyebrow">Nairobi’s fitness &amp; wellness collective</div>
+        <h1>MOVE.<br>PERFORM.<br><span>THRIVE.</span></h1>
+        <p class="alt-hero-copy">
+          Stronger bodies. Connected teams. Fuller lives.<br>
+          Find your way to move with DynaFit.
+        </p>
+        <div class="alt-hero-actions">
+          <a class="alt-button" href="#programs">Find your fit <span aria-hidden="true">↗</span></a>
+          <a class="alt-text-link" href="#programs">Explore our services <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="hero-side-note" aria-hidden="true">ONE LIFE. EVERY MOVE MATTERS.</div>
+
+      <div class="hero-bottom-line">
+        <span>PERSONAL FITNESS. COLLECTIVE ENERGY.</span>
+        <a href="#values">SCROLL TO DISCOVER <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+
+    <section class="values-strip" id="values" aria-label="DynaFit values">
+      <div class="values-inner">
+        <span>Built for real life</span><i aria-hidden="true">◆</i>
+        <span>Powered by community</span><i aria-hidden="true">◆</i>
+        <span>Rooted in movement</span><i aria-hidden="true">◆</i>
+        <span>Made for you</span>
+      </div>
+    </section>
+
+    <section class="service-strip" aria-label="Our services">
+      <div class="container services">
+        <article class="service">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="5" r="2.5"></circle>
+              <path d="M12 8v6m-5-4 5 2 5-2M9 14l-2 7m8-7 2 7M3 4h3m12 0h3"></path>
+            </svg>
+          </div>
+          <h3>Personal Fitness</h3>
+          <p>Expert coaching shaped around your goals and your life.</p>
+          <a href="#programs" class="text-link">Learn more <span>→</span></a>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="6" r="3"></circle>
+              <circle cx="4" cy="9" r="2"></circle>
+              <circle cx="20" cy="9" r="2"></circle>
+              <path d="M6 21v-3a6 6 0 0 1 12 0v3M1 20v-2a3 3 0 0 1 4-2.8M23 20v-2a3 3 0 0 0-4-2.8"></path>
+            </svg>
+          </div>
+          <h3>Group Programs</h3>
+          <p>Good energy, shared goals and a team that keeps you going.</p>
+          <a href="#programs" class="text-link">Learn more <span>→</span></a>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="3" y="8" width="7" height="13" rx="1"></rect>
+              <rect x="14" y="3" width="7" height="18" rx="1"></rect>
+              <path d="M5 11h3m-3 3h3m-3 3h3m8-10h3m-3 3h3m-3 3h3m-3 3h3"></path>
+            </svg>
+          </div>
+          <h3>Corporate Wellness</h3>
+          <p>Healthier teams, better energy and stronger workplaces.</p>
+          <a href="#corporate" class="text-link">Learn more <span>→</span></a>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="4" width="14" height="15" rx="2"></rect>
+              <path d="M6 21h6M9 19v2"></path>
+              <rect x="17" y="8" width="5" height="12" rx="1"></rect>
+            </svg>
+          </div>
+          <h3>Digital Fitness</h3>
+          <p>On-demand workouts and coaching that fit your schedule.</p>
+          <a href="#digital" class="text-link">Learn more <span>→</span></a>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+              <path d="M7 2v6m10-6v6M3 10h18"></path>
+              <path d="m12 12 1.4 2.3 2.6.4-1.9 1.9.4 2.6-2.5-1.2-2.3 1.2.4-2.6-1.9-1.9 2.6-.4Z"></path>
+            </svg>
+          </div>
+          <h3>Events &amp; Community</h3>
+          <p>Runs, hikes, challenges and wellness experiences.</p>
+          <a href="#events" class="text-link">Learn more <span>→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="programs">
+      <div class="container programs-layout">
+        <div class="program-intro">
+          <div class="eyebrow">Find your starting point</div>
+          <h2>Find Your Fit<br><span>At Every Stage.</span></h2>
+          <p>Whether you're building a new habit, chasing a personal best or helping your team thrive, there's a DynaFit program for you.</p>
+          <a href="#contact" class="btn">Find My Program <span class="arrow">→</span></a>
+        </div>
+
+        <div>
+          <div class="filters" role="group" aria-label="Filter programs">
+            <button class="filter active" data-filter="all">All programs</button>
+            <button class="filter" data-filter="strength">Strength</button>
+            <button class="filter" data-filter="group">Group training</button>
+            <button class="filter" data-filter="work">Workplace</button>
+            <button class="filter" data-filter="outdoor">Outdoors</button>
+          </div>
+
+          <div class="program-grid">
+            <a href="#contact" class="program-card" data-category="strength">
+              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80" alt="Strength training">
+              <div class="content">
+                <span class="tag">Build power</span>
+                <h3>Strength &amp; Conditioning</h3>
+                <p>Build strength. Improve performance.</p>
+              </div>
+              <span class="card-arrow">↗</span>
+            </a>
+
+            <a href="#contact" class="program-card" data-category="group">
+              <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=85" alt="Group training">
+              <div class="content">
+                <span class="tag">Move together</span>
+                <h3>HIIT &amp; Functional</h3>
+                <p>Burn fuel. Build stamina. Feel alive.</p>
+              </div>
+              <span class="card-arrow">↗</span>
+            </a>
+
+            <a href="#corporate" class="program-card" data-category="work">
+              <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85" alt="Corporate wellness">
+              <div class="content">
+                <span class="tag">Thrive at work</span>
+                <h3>Corporate Wellness</h3>
+                <p>Healthier teams. Better business.</p>
+              </div>
+              <span class="card-arrow">↗</span>
+            </a>
+
+            <a href="#events" class="program-card" data-category="outdoor">
+              <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=900&q=85" alt="Outdoor fitness">
+              <div class="content">
+                <span class="tag">Get outside</span>
+                <h3>Outdoor &amp; Adventure</h3>
+                <p>Explore. Move. Connect.</p>
+              </div>
+              <span class="card-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <div class="eyebrow">A little more about us</div>
+          <h2>More Than Fitness.<br><span>It's a Lifestyle.</span></h2>
+          <p>We're here to make movement feel less like a chore and more like a part of life. Our coaches meet you where you are, celebrate every milestone and help you build habits that last.</p>
+
+          <div class="benefits">
+            <div class="benefit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg>
+              Better health
+            </div>
+
+            <div class="benefit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m13 2-3 8H4l7 12 3-9h6L13 2Z"/></svg>
+              More energy
+            </div>
+
+            <div class="benefit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 20h18M5 17V9h4v8m3 0V4h4v13m3 0v-6h2v6"/></svg>
+              Greater performance
+            </div>
+
+            <div class="benefit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="7" r="3"/><path d="M6 21v-3a6 6 0 0 1 12 0v3M2 10a2 2 0 1 0 0-4m0 12v-2a4 4 0 0 1 2-3.5M22 10a2 2 0 1 1 0-4m0 12v-2a4 4 0 0 0-2-3.5"/></svg>
+              Stronger communities
+            </div>
+          </div>
+
+          <a href="#contact" class="btn secondary">Meet Your DynaFit Team <span class="arrow">→</span></a>
+        </div>
+
+        <div class="about-visual">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=85" alt="Fitness coach supporting a client">
+          <div class="quote-stamp">Real people.<br>Real progress.<small>Every rep counts.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-panel">
+      <div class="container stat-grid">
+        <div class="stat-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="6" r="3"/><path d="M6 21v-3a6 6 0 0 1 12 0v3M2 11a2 2 0 1 0 0-4m0 12v-2a4 4 0 0 1 2-3.5M22 11a2 2 0 1 1 0-4m0 12v-2a4 4 0 0 0-2-3.5"/></svg>
+          <div>
+            <strong>1,000+</strong>
+            <span>Active members</span>
+          </div>
+        </div>
+
+        <div class="stat-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="8" width="8" height="13"></rect><rect x="14" y="3" width="8" height="18"></rect><path d="M4 11h4m-4 3h4m8-7h4m-4 3h4m-4 3h4"/></svg>
+          <div>
+            <strong>20+</strong>
+            <span>Corporate clients</span>
+          </div>
+        </div>
+
+        <div class="stat-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M7 2v6m10-6v6M3 10h18m3 4h-4m2-2v4"/></svg>
+          <div>
+            <strong>50+</strong>
+            <span>Events &amp; Challenges</span>
+          </div>
+        </div>
+
+        <div class="stat-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m12 2 3 6.5 7 .9-5.1 4.9 1.2 7L12 18l-6.1 3.3 1.2-7L2 9.4l7-.9L12 2Z"/></svg>
+          <div>
+            <strong>4.8/5</strong>
+            <span>Member satisfaction</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="split-feature" id="founder">
+      <div class="testimonial">
+        <div class="quote-mark">“</div>
+        <div id="testimonialText">
+          <blockquote>“DynaFit helped me make movement part of my life, not another task on my list. The coaches are supportive, the sessions are fun, and I feel stronger every week.”</blockquote>
+          <div class="person">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Grace M">
+            <div>
+              <strong>Grace M.</strong>
+              <span>DynaFit member</span>
+            </div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button id="prevTestimonial" aria-label="Previous testimonial">←</button>
+          <button id="nextTestimonial" aria-label="Next testimonial">→</button>
+        </div>
+      </div>
+
+      <div class="cta-panel" id="digital">
+        <div class="eyebrow">Ready to get started?</div>
+        <h2>Your Health Goals Are Closer Than You Think.</h2>
+        <p>In-person energy or digital flexibility — let's find a way to make wellness work for you.</p>
+        <a href="#contact" class="btn">Let's Build Your Plan <span class="arrow">→</span></a>
+      </div>
+    </section>
+
+    <section class="section events" id="events">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Make memories in motion</div>
+            <h2>Good Things Happen<br>When We Move Together.</h2>
+          </div>
+          <p>Find your people, try something new and make wellbeing a shared experience.</p>
+        </div>
+
+        <div class="event-grid">
+          <article class="event-card">
+            <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=900&q=85" alt="Community run">
+            <div class="event-body">
+              <div class="event-meta"><span>Community</span><span>•</span><span>All levels</span></div>
+              <h3>Community Run Club</h3>
+              <p>Easy miles, fresh air and good company. Your pace is always welcome.</p>
+              <a href="#contact" class="text-link">Join the next run <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=85" alt="Trail hike">
+            <div class="event-body">
+              <div class="event-meta"><span>Outdoors</span><span>•</span><span>Adventure</span></div>
+              <h3>Weekend Trail Escape</h3>
+              <p>Step away from the screen and reconnect with nature, one trail at a time.</p>
+              <a href="#contact" class="text-link">Explore adventures <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=85" alt="Mind and body reset">
+            <div class="event-body">
+              <div class="event-meta"><span>Wellness</span><span>•</span><span>Reset</span></div>
+              <h3>Mind &amp; Body Reset</h3>
+              <p>A feel-good session for mobility, mindfulness and a calmer finish to your week.</p>
+              <a href="#contact" class="text-link">Save my spot <span>→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wellness" id="corporate">
+      <div class="container wellness-grid">
+        <div class="wellness-image">
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1100&q=85" alt="Team wellness">
+          <div class="floating-note">Wellbeing that works.<span>Practical programs for real teams.</span></div>
+        </div>
+
+        <div class="wellness-copy">
+          <div class="eyebrow">Corporate wellness</div>
+          <h2>Stronger Teams.<br>Healthier Workplaces.</h2>
+          <p>Give your people more than a wellness day. Build a culture where healthy habits, connection and performance can grow together.</p>
+
+          <ul class="check-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>
+              Custom wellness plans for your team's needs
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>
+              Group movement, workshops and team challenges
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>
+              Flexible delivery — onsite, outdoors or online
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg>
+              Engagement insights to help you keep improving
+            </li>
+          </ul>
+
+          <a href="#contact" class="btn">Talk to Our Wellness Team <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Good to know</div>
+            <h2>Questions? We've Got You.</h2>
+          </div>
+          <p>Starting something new should feel simple. Here are a few helpful answers.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item open">
+            <button class="faq-question" aria-expanded="true">
+              <span>Do I need to be fit before I start?</span>
+              <span>−</span>
+            </button>
+            <div class="faq-answer">Not at all. We welcome different experience levels and help you choose a starting point that feels manageable. Progress is personal — we'll build from where you are.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can you create a wellness program for our company?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">Yes. We can work with your team to shape a practical program around your goals, schedule, workplace and preferred delivery format.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can I train remotely?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">Absolutely. Our digital fitness approach is designed to help you access workouts and coaching around your schedule.</div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How do I find the right program?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">Send us a message with your goals, availability and any questions. Our team can help you narrow down the options and suggest a sensible next step.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <div class="eyebrow">Your next chapter starts here</div>
+          <h2>Let's Make<br>Movement Happen.</h2>
+          <p>Tell us what you're working towards. We'll help you explore a program that fits your life, your team or your community.</p>
+
+          <div class="contact-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span>Nairobi, Kenya</span>
+          </div>
+
+          <div class="contact-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 11.2 19a19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 2.8a2 2 0 0 1-.6 1.9L7.7 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 1.9-.6l2.8.5a2 2 0 0 1 1.7 2.6Z"/></svg>
+            <a href="https://wa.me/254743517065" target="_blank" rel="noopener noreferrer">+254 743 517065 <span class="whatsapp-label">· WhatsApp ↗</span></a>
+          </div>
+
+          <div class="contact-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
+            <span>info@dynafit.com</span>
+          </div>
+        </div>
+
+        <form id="contactForm" class="contact-form">
+          <div class="form-success" id="formSuccess">Thanks for reaching out! This preview form is working locally. Connect it to your email or CRM before launch.</div>
+
+          <div class="field">
+            <label for="name">Your name *</label>
+            <input id="name" name="name" required placeholder="e.g. Alex Mwangi">
+          </div>
+
+          <div class="field">
+            <label for="email">Email address *</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com">
+          </div>
+
+          <div class="field">
+            <label for="interest">I'm interested in</label>
+            <select id="interest" name="interest">
+              <option>Personal Fitness</option>
+              <option>Group Training</option>
+              <option>Corporate Wellness</option>
+              <option>Digital Fitness</option>
+              <option>Events &amp; Community</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" type="tel" placeholder="+254 ...">
+          </div>
+
+          <div class="field full">
+            <label for="message">Tell us a little about your goals</label>
+            <textarea id="message" name="message" placeholder="What would you like to achieve?"></textarea>
+          </div>
+
+          <p class="form-note">By submitting, you agree that DynaFit may contact you about your enquiry.</p>
+
+          <button type="submit" class="btn">Send My Enquiry <span class="arrow">→</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="#home" aria-label="DynaFit home">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>
+              <span class="brand-name">Dyna<em>Fit</em></span>
+            </span>
+          </a>
+          <p style="max-width:260px; margin-top:14px;">Helping people move better, feel stronger and build healthier communities — one step at a time.</p>
+          <div class="socials">
+            <a href="#contact" aria-label="Instagram">ig</a>
+            <a href="#contact" aria-label="Facebook">f</a>
+            <a href="#contact" aria-label="LinkedIn">in</a>
+            <a href="#contact" aria-label="TikTok">tk</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#corporate">Corporate Wellness</a></li>
+            <li><a href="#digital">Digital Fitness</a></li>
+            <li><a href="#events">Events &amp; Community</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Get in touch</h4>
+          <ul class="footer-links">
+            <li>⌖ Nairobi, Kenya</li>
+            <li>☎ <a href="https://wa.me/254743517065" target="_blank" rel="noopener noreferrer">+254 743 517065 · WhatsApp ↗</a></li>
+            <li>✉ <a href="mailto:info@dynafit.com">info@dynafit.com</a></li>
+          </ul>
+          <p style="margin-top:16px;">Have a question? We'd love to hear from you.</p>
+          <a href="#contact" class="text-link" style="margin-top:10px; color:var(--green);">Contact our team <span>→</span></a>
+        </div>
+
+        <div>
+          <h4>Join our community</h4>
+          <p>Get fitness tips, event news and encouragement for your next milestone.</p>
+          <form id="newsletterForm" class="footer-newsletter">
+            <input type="email" id="newsletterEmail" placeholder="Your email address" aria-label="Your email address" required>
+            <button type="submit" aria-label="Subscribe">→</button>
+          </form>
+          <p id="newsletterMessage" style="font-size:.75rem; margin-top:10px;"></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 DynaFit. All rights reserved.</span>
+        <span>Move. Perform. Thrive.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const toast = (message) => {
+      const el = document.getElementById('toast');
+      el.textContent = message;
+      el.classList.add('show');
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => el.classList.remove('show'), 2800);
+    };
+
+    document.querySelectorAll('.filter').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.program-card').forEach((card) => {
+          const matches = filter === 'all' || card.dataset.category === filter;
+          card.hidden = !matches;
+        });
+      });
+    });
+
+    const testimonials = [
+      {
+        quote: '“DynaFit helped me make movement part of my life, not another task on my list. The coaches are supportive, the sessions are fun, and I feel stronger every week.”',
+        name: 'Grace M.',
+        role: 'DynaFit member',
+        image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80'
+      },
+      {
+        quote: '“Our team has more energy, better connection and something positive to look forward to. The sessions are practical, inclusive and genuinely enjoyable.”',
+        name: 'David K.',
+        role: 'Corporate wellness participant',
+        image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80'
+      },
+      {
+        quote: '“I started as a complete beginner. The community made it easy to keep showing up, and the little wins have added up to a big change in how I feel.”',
+        name: 'Amina N.',
+        role: 'Group training member',
+        image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=120&q=80'
+      }
+    ];
+
+    let testimonialIndex = 0;
+    const testimonialText = document.getElementById('testimonialText');
+
+    function renderTestimonial() {
+      const t = testimonials[testimonialIndex];
+      testimonialText.innerHTML = `
+        <blockquote>${t.quote}</blockquote>
+        <div class="person">
+          <img src="${t.image}" alt="${t.name}">
+          <div>
+            <strong>${t.name}</strong>
+            <span>${t.role}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    document.getElementById('prevTestimonial').addEventListener('click', () => {
+      testimonialIndex = (testimonialIndex - 1 + testimonials.length) % testimonials.length;
+      renderTestimonial();
+    });
+
+    document.getElementById('nextTestimonial').addEventListener('click', () => {
+      testimonialIndex = (testimonialIndex + 1) % testimonials.length;
+      renderTestimonial();
+    });
+
+    document.querySelectorAll('.faq-question').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const open = !item.classList.contains('open');
+        item.classList.toggle('open', open);
+        btn.setAttribute('aria-expanded', String(open));
+        btn.lastElementChild.textContent = open ? '−' : '+';
+      });
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const success = document.getElementById('formSuccess');
+      success.style.display = 'block';
+      document.getElementById('contactForm').reset();
+      success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      toast('Your enquiry has been sent.');
+    });
+
+    document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const message = document.getElementById('newsletterMessage');
+      message.textContent = 'Thanks for joining the DynaFit community!';
+      document.getElementById('newsletterEmail').value = '';
+      toast('Subscribed successfully.');
+    });
+  </script>
+</body>
+</html>
